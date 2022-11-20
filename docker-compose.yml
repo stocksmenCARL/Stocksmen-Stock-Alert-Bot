@@ -1,0 +1,22 @@
+version: '3.5'
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: dog_cunt
+      POSTGRES_DB: db
+    expose:
+      ["5432:5432"]
+    networks: ['localnet']
+
+  bot:
+    build:
+      context: ./
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      ["6868:6969"]
+    networks: ['localnet']
+networks: {localnet: {}}

@@ -1,0 +1,4 @@
+## Config master file that has all API endpoints and secret keys.
+config.json
+
+vendor
